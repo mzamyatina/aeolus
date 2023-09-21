@@ -3,12 +3,112 @@ Changelog
 
 .. default-role:: py:obj
 
-0.4.10
------
+
+0.4.18
+------
 
 :Date: TBA
 
+* Add `lfric` functions in a submodule with the same name.
+* Add `esmf_regrid` as a dependency.
+* Move `calc_derived_cubes` from `pouch`, add `air_pressure()`.
+* Add various plotting utilities.
+* Add the `log` submodule with `loguru` as a dependency.
+* Add `proc_um_output`.
+* Add the `RUNTIME` variable.
+* Update dependencies.
+
+
+0.4.17
+------
+
+:Date: 14 April 2023
+
+* Add `lfric` name dictionary.
+* Add `subset.CellMethodConstraint`.
+* Update `pyvista` functions to be in step with the latest `pyvista` version.
+* Fix a bug in the `calc_transmission_spectrum()` (does not affect the results).
+
+
+0.4.16
+------
+
+:Date: 11 January 2023
+
+* Miscellaneous improvements.
+
+
+0.4.15
+------
+
+:Date: 22 March 2022
+
+* Patch the calculation of the day-night average transmission flux.
+* Update citation.
+
+
+0.4.14
+------
+
+:Date: 30 March 2022
+
+* Require iris 3.2 as a minimum.
+* Drop Python 3.7 support.
+* Add github action tests for Python 3.10 (for now excluding windows).
+* Add new model names.
+* Correct the calculation of `sigma_p` and remove its averaging.
+* Make `calc.stats.time_mean()` be able to accept cubes or collections of cubes.
+* Add the `structured_um_loading` option to `io.load_data()`.
+* Add `wind_rot_div()` to the diagnostics module and a relevant example notebook.
+* Simplify `isel()` following suggestions from the `iris` devs.
+
+
+0.4.13
+------
+
+:Date: 18 October 2021
+
+* Make the package compatible with iris v3.1 by using explicit imports
+* Refactor functions to calculate transmission spectrum.
+* Add `io.create_dummy_cube()`
+* Add `synthobs.calc_transmission_spectrum()`
+* Use `da.roll()` instead of `np.roll` in `coord.roll_*` functions.
+* Fix  a few minor bugs in synthobs.
+
+
+0.4.12
+------
+
+:Date: 29 July 2021
+
+* Add `coord_check` option to `AtmoSim` and `CoordContainer` to allow for non-checking of coordinates.
+* Remove `MidpointNormalize`
+* Add `plot.text.tex2cf_units()` and `plot.text.unit_format()`
+* Rewrite github actions
+* Add pre-commit hooks
+
+
+0.4.11
+------
+
+:Date: 08 June 2021
+
+* Add representations of `AtmoSim`
+* Fix a bug with the `const_from_attrs` decorator
+* Add contributor's guide
+* Replace all autodoc function and class references by module references
+
+
+0.4.10
+------
+
+:Date: 07 June 2021
+
+* Add functions to calculate synthetic transmission spectrum. By `Maria Zamyatina <https://github.com/mzamyatina>`_.
+* Replace `interp_to_pres_lev()`, `interp_all_to_pres_lev()` and `interp_to_single_pres_lev()` with `interp_cube_from_height_to_pressure_levels()` and `interp_cubelist_from_height_to_pressure_levels()` with a better interface
+* Move test data to a separate repository: `aeolus_data`
 * Add more names to `model.base`
+* Add an option for the `const_from_attrs()` decorator not to raise an error
 
 
 0.4.9
@@ -54,7 +154,7 @@ Changelog
 * Replace TravisCI with GitHub Actions
 
 * Restructure the package:
-  
+
   - the library is now in `src/aeolus`
   - tests are now in `tests/`
 
@@ -129,16 +229,15 @@ Changelog
   - replace all `DIM_CONSTR_*` by a class `DimConstr` with each of the constraints as an attribute
   - replace `coord.add_binned_lon_lat()` by a generic `coord.add_binned_coord()` function
 
-* Minor bug fixes and clean-up 
+* Minor bug fixes and clean-up
 
 0.4.4
 -----
 
-:Date: 04 May 2020 
+:Date: 04 May 2020
 
 * Add Python 3.8 to build matrix
-* API changes: merge `grid` into `coord`; move `misc` flux calculations to `calc` submodule,
-remove `util` folder by moving `text` to `plot`.
+* API changes: merge `grid` into `coord`; move `misc` flux calculations to `calc` submodule, remove `util` folder by moving `text` to `plot`.
 * Add a function to attach non-Earth auxiliary time coordinates to a cube
 * Add Titan constants (some orbital parameters are those for Saturn for simplicity)
 * Fix a typo in Earth constants

@@ -1,96 +1,52 @@
-
-
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" />
-  
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  
-  <title>Plotting functions &mdash; aeolus 0+untagged.1.gd31fa59 documentation</title>
-  
-
-  
-  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-
-  
-  
+  <title>Plotting functions &mdash; aeolus 0.4.9+232.gfccc23a documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
-  
-
-  
-  
-
-  
-
-  
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-        <script src="../_static/jquery.js"></script>
-        <script src="../_static/underscore.js"></script>
-        <script src="../_static/doctools.js"></script>
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=740970f4"></script>
+        <script src="../_static/doctools.js?v=888ff710"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    
-    <script type="text/javascript" src="../_static/js/theme.js"></script>
-
-    
+    <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Regions" href="region.html" />
+    <link rel="next" title="Process output of the UM" href="proc_um_output.html" />
     <link rel="prev" title="Model-specific dictionaries of variable and coordinate names" href="model.html" /> 
 </head>
 
-<body class="wy-body-for-nav">
-
-   
+<body class="wy-body-for-nav"> 
   <div class="wy-grid-for-nav">
-    
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-          
 
           
-            <a href="../index.html" class="icon icon-home"> aeolus
           
-
-          
+          <a href="../index.html" class="icon icon-home">
+            aeolus
           </a>
-
-          
-            
-            
               <div class="version">
-                0+untagged.1.gd31fa59
+                0.4.9+232.gfccc23a
               </div>
-            
-          
-
-          
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
-
-          
-        </div>
-
-        
-        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-          
-            
-            
-              
-            
-            
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../install.html">Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../examples/index.html">Examples</a></li>
@@ -100,170 +56,89 @@
 <li class="toctree-l2"><a class="reference internal" href="const.html">Physical constants</a></li>
 <li class="toctree-l2"><a class="reference internal" href="coord.html">Cube coordinate functionality</a></li>
 <li class="toctree-l2"><a class="reference internal" href="io.html">I/O</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lfric.html">Functions for LFRic output</a></li>
+<li class="toctree-l2"><a class="reference internal" href="log.html">Logging</a></li>
 <li class="toctree-l2"><a class="reference internal" href="model.html">Model-specific dictionaries of variable and coordinate names</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Plotting functions</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#pyvista-interface">PyVista interface</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-aeolus.plot.cart">Cartography</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#aeolus.plot.cart.GeoAxesGrid"><code class="docutils literal notranslate"><span class="pre">GeoAxesGrid</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#aeolus.plot.cart.label_global_map_gridlines"><code class="docutils literal notranslate"><span class="pre">label_global_map_gridlines()</span></code></a></li>
 </ul>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="#module-aeolus.plot.mpl">Matplotlib helpers</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#aeolus.plot.mpl.add_custom_legend"><code class="docutils literal notranslate"><span class="pre">add_custom_legend()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#aeolus.plot.mpl.capitalise"><code class="docutils literal notranslate"><span class="pre">capitalise()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#aeolus.plot.mpl.figsave"><code class="docutils literal notranslate"><span class="pre">figsave()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#aeolus.plot.mpl.hcross"><code class="docutils literal notranslate"><span class="pre">hcross()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#aeolus.plot.mpl.linspace_pm1"><code class="docutils literal notranslate"><span class="pre">linspace_pm1()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#aeolus.plot.mpl.make_list_2d"><code class="docutils literal notranslate"><span class="pre">make_list_2d()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#aeolus.plot.mpl.map_scatter"><code class="docutils literal notranslate"><span class="pre">map_scatter()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#aeolus.plot.mpl.timeseries_1d"><code class="docutils literal notranslate"><span class="pre">timeseries_1d()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#aeolus.plot.mpl.timeseries_2d"><code class="docutils literal notranslate"><span class="pre">timeseries_2d()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#module-aeolus.plot.text">Text-related functions</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#aeolus.plot.text.cube_minmeanmax_str"><code class="docutils literal notranslate"><span class="pre">cube_minmeanmax_str()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#aeolus.plot.text.fmt_lonlat"><code class="docutils literal notranslate"><span class="pre">fmt_lonlat()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#aeolus.plot.text.subplot_label_generator"><code class="docutils literal notranslate"><span class="pre">subplot_label_generator()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#aeolus.plot.text.tex2cf_units"><code class="docutils literal notranslate"><span class="pre">tex2cf_units()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#aeolus.plot.text.unit_format"><code class="docutils literal notranslate"><span class="pre">unit_format()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#module-aeolus.plot.pv">PyVista interface</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#aeolus.plot.pv.grid_for_scalar_cube_sph"><code class="docutils literal notranslate"><span class="pre">grid_for_scalar_cube_sph()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#aeolus.plot.pv.grid_for_vector_cubes_sph"><code class="docutils literal notranslate"><span class="pre">grid_for_vector_cubes_sph()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="proc_um_output.html">Process output of the UM</a></li>
 <li class="toctree-l2"><a class="reference internal" href="region.html">Regions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="subset.html">Subset cubes using constraints</a></li>
+<li class="toctree-l2"><a class="reference internal" href="synthobs.html">Synthetic observations</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../changelog.html">Changelog</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../contributing.html">Contributor’s Guide</a></li>
 </ul>
 
-            
-          
         </div>
-        
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-
-      
-      <nav class="wy-nav-top" aria-label="top navigation">
-        
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="../index.html">aeolus</a>
-        
       </nav>
 
-
       <div class="wy-nav-content">
-        
         <div class="rst-content">
-        
-          
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div role="navigation" aria-label="breadcrumbs navigation">
-
+          <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-    
-      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-        
-          <li><a href="index.html">API reference</a> &raquo;</li>
-        
-      <li>Plotting functions</li>
-    
-    
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">API reference</a></li>
+      <li class="breadcrumb-item active">Plotting functions</li>
       <li class="wy-breadcrumbs-aside">
-        
-          
             <a href="../_sources/api/plot.rst.txt" rel="nofollow"> View page source</a>
-          
-        
       </li>
-    
   </ul>
-
-  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
-            
-  
-<style>
-/* CSS overrides for sphinx_rtd_theme */
-
-/* 24px margin */
-.nbinput.nblast.container,
-.nboutput.nblast.container {
-    margin-bottom: 19px;  /* padding has already 5px */
-}
-
-/* ... except between code cells! */
-.nblast.container + .nbinput.container {
-    margin-top: -19px;
-}
-
-.admonition > p:before {
-    margin-right: 4px;  /* make room for the exclamation icon */
-}
-
-/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
-.math {
-    text-align: unset;
-}
-</style>
-<div class="section" id="plotting-functions">
-<span id="plot-ref"></span><h1>Plotting functions<a class="headerlink" href="#plotting-functions" title="Permalink to this headline">¶</a></h1>
+             
+  <section id="plotting-functions">
+<span id="plot-ref"></span><h1>Plotting functions<a class="headerlink" href="#plotting-functions" title="Link to this heading"></a></h1>
+<section id="module-aeolus.plot.cart">
+<span id="cartography"></span><h2>Cartography<a class="headerlink" href="#module-aeolus.plot.cart" title="Link to this heading"></a></h2>
+<p>Plotting functions used with cartopy.</p>
 <dl class="py class">
-<dt id="aeolus.plot.CloudPlotter">
-<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">aeolus.plot.</span></code><code class="sig-name descname"><span class="pre">CloudPlotter</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cubelist</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aeolus/plot/cloud.html#CloudPlotter"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#aeolus.plot.CloudPlotter" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.9)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
-<p>Factory to create a composite plot of low, medium, high cloud area fractions.</p>
-<dl class="py method">
-<dt id="aeolus.plot.CloudPlotter.__init__">
-<code class="sig-name descname"><span class="pre">__init__</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cubelist</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aeolus/plot/cloud.html#CloudPlotter.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#aeolus.plot.CloudPlotter.__init__" title="Permalink to this definition">¶</a></dt>
-<dd><p>Initialise CloudPlotter from <cite>iris.cube.CubeList</cite> containing cloud fractions.</p>
-</dd></dl>
-
-<dl class="py method">
-<dt id="aeolus.plot.CloudPlotter.scale_data">
-<code class="sig-name descname"><span class="pre">scale_data</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">threshold</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.1</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aeolus/plot/cloud.html#CloudPlotter.scale_data"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#aeolus.plot.CloudPlotter.scale_data" title="Permalink to this definition">¶</a></dt>
-<dd><p>Scale cloud levels and add them together to make a composite cloud field.</p>
-<p>Values below <cite>threshold</cite> are set to zero.</p>
-</dd></dl>
-
-<dl class="py method">
-<dt id="aeolus.plot.CloudPlotter.get_all">
-<code class="sig-name descname"><span class="pre">get_all</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">nsteps</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cmap</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aeolus/plot/cloud.html#CloudPlotter.get_all"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#aeolus.plot.CloudPlotter.get_all" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get cloud types cube and kwargs for external plotting.</p>
-</dd></dl>
-
-<dl class="py method">
-<dt id="aeolus.plot.CloudPlotter.pcolormesh">
-<code class="sig-name descname"><span class="pre">pcolormesh</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ax</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">xy</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">()</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nsteps</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cmap</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cb_kwargs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">pc_kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aeolus/plot/cloud.html#CloudPlotter.pcolormesh"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#aeolus.plot.CloudPlotter.pcolormesh" title="Permalink to this definition">¶</a></dt>
-<dd><p>Display composite cloud plot using <cite>matplotlib.pyplot.pcolormesh</cite>.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>ax</strong> (<em>matplotlib axes object</em>) – Axes where to create the plot in</p></li>
-<li><p><strong>xy</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.9)"><em>tuple</em></a><em>, </em><em>optional</em>) – Sequence of X and Y coordinate arrays (passed to pcolormesh)</p></li>
-<li><p><strong>nsteps</strong> (<em>integer</em><em>, </em><em>optional</em>) – Number of colour steps for each of cloud category</p></li>
-<li><p><strong>cmap</strong> (<a class="reference external" href="https://matplotlib.org/api/_as_gen/matplotlib.colors.ListedColormap.html#matplotlib.colors.ListedColormap" title="(in Matplotlib v3.4.1)"><em>matplotlib.colors.ListedColormap</em></a><em>, </em><em>optional</em>) – Colormap instance. If not given, custom cloud colormap is used.</p></li>
-<li><p><strong>cb_kwags</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.9)"><em>dict</em></a><em>, </em><em>optional</em>) – Dictionary of kwargs passed to colorbar</p></li>
-<li><p><strong>**pc_kwargs</strong> (<em>optional</em>) – additional pcolormesh arguments</p></li>
-</ul>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p><ul class="simple">
-<li><p><strong>h</strong> (<cite>matplotlib.collections.QuadMesh</cite>) – pcolormesh instance</p></li>
-<li><p><strong>cb</strong> (<cite>matplotlib.colorbar.Colorbar</cite>) – colorbar</p></li>
-</ul>
-</p>
-</dd>
-</dl>
-</dd></dl>
-
-</dd></dl>
-
-<dl class="py class">
-<dt id="aeolus.plot.GeoAxesGrid">
-<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">aeolus.plot.</span></code><code class="sig-name descname"><span class="pre">GeoAxesGrid</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fig</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rect</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nrows_ncols</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">projection</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">axesgrid_kw</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aeolus/plot/cart.html#GeoAxesGrid"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#aeolus.plot.GeoAxesGrid" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference external" href="https://matplotlib.org/api/_as_gen/mpl_toolkits.axes_grid1.axes_grid.ImageGrid.html#mpl_toolkits.axes_grid1.axes_grid.ImageGrid" title="(in Matplotlib v3.4.1)"><code class="xref py py-class docutils literal notranslate"><span class="pre">mpl_toolkits.axes_grid1.axes_grid.ImageGrid</span></code></a></p>
+<dt class="sig sig-object py" id="aeolus.plot.cart.GeoAxesGrid">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">aeolus.plot.cart.</span></span><span class="sig-name descname"><span class="pre">GeoAxesGrid</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fig</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rect</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nrows_ncols</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">projection</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">axesgrid_kw</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aeolus/plot/cart.html#GeoAxesGrid"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#aeolus.plot.cart.GeoAxesGrid" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference external" href="https://matplotlib.org/stable/api/_as_gen/mpl_toolkits.axes_grid1.axes_grid.ImageGrid.html#mpl_toolkits.axes_grid1.axes_grid.ImageGrid" title="(in Matplotlib v3.8.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">ImageGrid</span></code></a></p>
 <p>Grid of cartopy axes.</p>
 <p>A subclass of <code class="xref py py-class docutils literal notranslate"><span class="pre">mpl_toolkits.axes_grid1.AxesGrid</span></code> representing
-a grid of maps with the same projection <a class="reference external" href="https://scitools.org.uk/cartopy/docs/latest/crs/index.html#cartopy.crs.Projection" title="(in cartopy v0.18.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Projection</span></code></a>.</p>
+a grid of maps with the same projection <a class="reference external" href="https://scitools.org.uk/cartopy/docs/latest/reference/generated/cartopy.crs.Projection.html#cartopy.crs.Projection" title="(in cartopy v0.22.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Projection</span></code></a>.</p>
 <ul class="simple">
 <li><p><cite>axes_class</cite> is defined automatically</p></li>
 <li><p>The <code class="xref py py-class docutils literal notranslate"><span class="pre">AxesGrid</span></code> built-in labelling is always switched off,
@@ -271,54 +146,58 @@ and instead a standard procedure of creating
 grid lines and labels should be used.</p></li>
 </ul>
 <dl class="py method">
-<dt id="aeolus.plot.GeoAxesGrid.__init__">
-<code class="sig-name descname"><span class="pre">__init__</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fig</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rect</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nrows_ncols</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">projection</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">axesgrid_kw</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aeolus/plot/cart.html#GeoAxesGrid.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#aeolus.plot.GeoAxesGrid.__init__" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="aeolus.plot.cart.GeoAxesGrid.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fig</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rect</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nrows_ncols</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">projection</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">axesgrid_kw</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aeolus/plot/cart.html#GeoAxesGrid.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#aeolus.plot.cart.GeoAxesGrid.__init__" title="Link to this definition"></a></dt>
 <dd><p>Initialise GeoAxesGrid.</p>
-<p>Build a <a class="reference internal" href="#aeolus.plot.GeoAxesGrid" title="aeolus.plot.GeoAxesGrid"><code class="xref py py-class docutils literal notranslate"><span class="pre">GeoAxesGrid</span></code></a> instance with a grid nrows*ncols
-<code class="xref py py-class docutils literal notranslate"><span class="pre">GeoAxes</span></code> with a projection <a class="reference external" href="https://scitools.org.uk/cartopy/docs/latest/crs/index.html#cartopy.crs.Projection" title="(in cartopy v0.18.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Projection</span></code></a>
-in <a class="reference external" href="https://matplotlib.org/api/figure_api.html#matplotlib.figure.Figure" title="(in Matplotlib v3.4.1)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Figure</span></code></a> <em>fig</em> with
+<p>Build a <a class="reference internal" href="#aeolus.plot.cart.GeoAxesGrid" title="aeolus.plot.cart.GeoAxesGrid"><code class="xref py py-class docutils literal notranslate"><span class="pre">GeoAxesGrid</span></code></a> instance with a grid nrows*ncols
+<code class="xref py py-class docutils literal notranslate"><span class="pre">GeoAxes</span></code> with a projection <a class="reference external" href="https://scitools.org.uk/cartopy/docs/latest/reference/generated/cartopy.crs.Projection.html#cartopy.crs.Projection" title="(in cartopy v0.22.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Projection</span></code></a>
+in <a class="reference external" href="https://matplotlib.org/stable/api/figure_api.html#matplotlib.figure.Figure" title="(in Matplotlib v3.8.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Figure</span></code></a> <em>fig</em> with
 <em>rect=[left, bottom, width, height]</em> (in
-<a class="reference external" href="https://matplotlib.org/api/figure_api.html#matplotlib.figure.Figure" title="(in Matplotlib v3.4.1)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Figure</span></code></a> coordinates) or
+<a class="reference external" href="https://matplotlib.org/stable/api/figure_api.html#matplotlib.figure.Figure" title="(in Matplotlib v3.8.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Figure</span></code></a> coordinates) or
 the subplot position code (e.g., “121”).</p>
 </dd></dl>
 
 </dd></dl>
 
 <dl class="py function">
-<dt id="aeolus.plot.label_global_map_gridlines">
-<code class="sig-prename descclassname"><span class="pre">aeolus.plot.</span></code><code class="sig-name descname"><span class="pre">label_global_map_gridlines</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fig</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ax</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">xticks</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[]</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">yticks</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[]</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">xoff</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">-</span> <span class="pre">10</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">yoff</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">-</span> <span class="pre">10</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">degree</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">text_kw</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aeolus/plot/cart.html#label_global_map_gridlines"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#aeolus.plot.label_global_map_gridlines" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="aeolus.plot.cart.label_global_map_gridlines">
+<span class="sig-prename descclassname"><span class="pre">aeolus.plot.cart.</span></span><span class="sig-name descname"><span class="pre">label_global_map_gridlines</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fig</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ax</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">xticks</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[]</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">yticks</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[]</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">xoff</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">-10</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">yoff</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">-10</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">degree</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">text_kw</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aeolus/plot/cart.html#label_global_map_gridlines"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#aeolus.plot.cart.label_global_map_gridlines" title="Link to this definition"></a></dt>
 <dd><p>Label gridlines of a global cartopy map.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>fig</strong> (<a class="reference external" href="https://matplotlib.org/api/figure_api.html#matplotlib.figure.Figure" title="(in Matplotlib v3.4.1)"><em>matplotlib.figure.Figure</em></a>) – Figure object.</p></li>
-<li><p><strong>ax</strong> (<a class="reference external" href="https://scitools.org.uk/cartopy/docs/latest/matplotlib/geoaxes.html#cartopy.mpl.geoaxes.GeoAxesSubplot" title="(in cartopy v0.18.0)"><em>cartopy.mpl.geoaxes.GeoAxesSubplot</em></a>) – Cartopy axes.</p></li>
+<li><p><strong>fig</strong> (<a class="reference external" href="https://matplotlib.org/stable/api/figure_api.html#matplotlib.figure.Figure" title="(in Matplotlib v3.8.0)"><em>matplotlib.figure.Figure</em></a>) – Figure object.</p></li>
+<li><p><strong>ax</strong> (<em>cartopy.mpl.geoaxes.GeoAxesSubplot</em>) – Cartopy axes.</p></li>
 <li><p><strong>xticks</strong> (<em>array-like</em><em>, </em><em>optional</em>) – Sequence of longitude ticks.</p></li>
 <li><p><strong>yticks</strong> (<em>array-like</em><em>, </em><em>optional</em>) – Sequence of latitude ticks.</p></li>
-<li><p><strong>xoff</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)"><em>float</em></a><em>, </em><em>optional</em>) – Longitude label offset from the axis (units are points).
+<li><p><strong>xoff</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.11)"><em>float</em></a><em>, </em><em>optional</em>) – Longitude label offset from the axis (units are points).
 If negative (by default), the labels are drawn at the east boundary,
 otherwise at the west boundary.</p></li>
-<li><p><strong>yoff</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)"><em>float</em></a><em>, </em><em>optional</em>) – Latitude label offset from the axis (units are points).
+<li><p><strong>yoff</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.11)"><em>float</em></a><em>, </em><em>optional</em>) – Latitude label offset from the axis (units are points).
 If negative (by default), the labels are drawn at the south boundary,
 otherwise at the north boundary.</p></li>
-<li><p><strong>degree</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.9)"><em>bool</em></a><em>, </em><em>optional</em>) – Add a degree symbol to tick labels.</p></li>
-<li><p><strong>**text_kw</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.9)"><em>dict</em></a><em>, </em><em>optional</em>) – Label text properties.</p></li>
+<li><p><strong>degree</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.11)"><em>bool</em></a><em>, </em><em>optional</em>) – Add a degree symbol to tick labels.</p></li>
+<li><p><strong>**text_kw</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.11)"><em>dict</em></a><em>, </em><em>optional</em>) – Label text properties.</p></li>
 </ul>
 </dd>
 </dl>
 </dd></dl>
 
+</section>
+<section id="module-aeolus.plot.mpl">
+<span id="matplotlib-helpers"></span><h2>Matplotlib helpers<a class="headerlink" href="#module-aeolus.plot.mpl" title="Link to this heading"></a></h2>
+<p>Matplotlib-related utilities.</p>
 <dl class="py function">
-<dt id="aeolus.plot.add_custom_legend">
-<code class="sig-prename descclassname"><span class="pre">aeolus.plot.</span></code><code class="sig-name descname"><span class="pre">add_custom_legend</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ax</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">styles_and_labels</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">leg_kw</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aeolus/plot/mpl.html#add_custom_legend"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#aeolus.plot.add_custom_legend" title="Permalink to this definition">¶</a></dt>
-<dd><p>Add a custom legend to matplotlib axes.</p>
+<dt class="sig sig-object py" id="aeolus.plot.mpl.add_custom_legend">
+<span class="sig-prename descclassname"><span class="pre">aeolus.plot.mpl.</span></span><span class="sig-name descname"><span class="pre">add_custom_legend</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ax_or_fig</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.html#matplotlib.axes.Axes" title="(in Matplotlib v3.8.0)"><span class="pre">Axes</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://matplotlib.org/stable/api/figure_api.html#matplotlib.figure.Figure" title="(in Matplotlib v3.8.0)"><span class="pre">Figure</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">styles_and_labels</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.11)"><span class="pre">dict</span></a></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">leg_kw</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.11)"><span class="pre">None</span></a></span></span><a class="reference internal" href="../_modules/aeolus/plot/mpl.html#add_custom_legend"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#aeolus.plot.mpl.add_custom_legend" title="Link to this definition"></a></dt>
+<dd><p>Add a custom legend to a matplotlib axis or figure.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>ax</strong> (<em>matplotlib.axes._subplots.AxesSubplot</em>) – Axes where to put the legend.</p></li>
-<li><p><strong>styles_and_labels</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.9)"><em>dict</em></a>) – Dictionary with labels as keys and a dictionary of plot
+<li><p><strong>ax_or_fig</strong> (<em>matplotlib.axes._subplots.AxesSubplot</em><em> or </em><a class="reference external" href="https://matplotlib.org/stable/api/figure_api.html#matplotlib.figure.Figure" title="(in Matplotlib v3.8.0)"><em>matplotlib.figure.Figure</em></a>) – Matplotlib object where to put the legend.</p></li>
+<li><p><strong>styles_and_labels</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.11)"><em>dict</em></a>) – Dictionary with labels as keys and a dictionary of plot
 keywords as values.</p></li>
-<li><p><strong>leg_kw</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.9)"><em>dict</em></a><em>, </em><em>optional</em>) – Keyword arguments passed to <cite>legend()</cite> function.</p></li>
+<li><p><strong>leg_kw</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.11)"><em>dict</em></a><em>, </em><em>optional</em>) – Keyword arguments passed to <cite>legend()</cite> function.</p></li>
 </ul>
 </dd>
 </dl>
@@ -332,113 +211,231 @@ keywords as values.</p></li>
 </div>
 </dd></dl>
 
-<div class="section" id="pyvista-interface">
-<span id="pyvista-ref"></span><h2>PyVista interface<a class="headerlink" href="#pyvista-interface" title="Permalink to this headline">¶</a></h2>
 <dl class="py function">
-<dt id="aeolus.plot.pv.grid_for_scalar_cube_sph">
-<code class="sig-prename descclassname"><span class="pre">aeolus.plot.pv.</span></code><code class="sig-name descname"><span class="pre">grid_for_scalar_cube_sph</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="pre">cube</span></em>, <em class="sig-param"><span class="pre">z_scale=1</span></em>, <em class="sig-param"><span class="pre">z_offset=0</span></em>, <em class="sig-param"><span class="pre">grid=None</span></em>, <em class="sig-param"><span class="pre">label='scalar3d'</span></em>, <em class="sig-param"><span class="pre">model=&lt;class</span> <span class="pre">'aeolus.model.base.Model'&gt;(80</span> <span class="pre">fields)</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aeolus/plot/pv.html#grid_for_scalar_cube_sph"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#aeolus.plot.pv.grid_for_scalar_cube_sph" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="aeolus.plot.mpl.capitalise">
+<span class="sig-prename descclassname"><span class="pre">aeolus.plot.mpl.</span></span><span class="sig-name descname"><span class="pre">capitalise</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">s</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><span class="pre">str</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">sep_old</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><span class="pre">str</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.11)"><span class="pre">None</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'_'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sep_new</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><span class="pre">str</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.11)"><span class="pre">None</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'</span> <span class="pre">'</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><span class="pre">str</span></a></span></span><a class="reference internal" href="../_modules/aeolus/plot/mpl.html#capitalise"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#aeolus.plot.mpl.capitalise" title="Link to this definition"></a></dt>
+<dd><p>Split the string and capitalise each word.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="aeolus.plot.mpl.figsave">
+<span class="sig-prename descclassname"><span class="pre">aeolus.plot.mpl.</span></span><span class="sig-name descname"><span class="pre">figsave</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fig</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://matplotlib.org/stable/api/figure_api.html#matplotlib.figure.Figure" title="(in Matplotlib v3.8.0)"><span class="pre">Figure</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">filename</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kw_savefig</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.11)"><span class="pre">None</span></a></span></span><a class="reference internal" href="../_modules/aeolus/plot/mpl.html#figsave"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#aeolus.plot.mpl.figsave" title="Link to this definition"></a></dt>
+<dd><p>Save figure and print relative path to it.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="aeolus.plot.mpl.hcross">
+<span class="sig-prename descclassname"><span class="pre">aeolus.plot.mpl.</span></span><span class="sig-name descname"><span class="pre">hcross</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">cube:</span> <span class="pre">~iris.cube.Cube,</span> <span class="pre">ax:</span> <span class="pre">~matplotlib.axes._axes.Axes</span> <span class="pre">|</span> <span class="pre">None</span> <span class="pre">=</span> <span class="pre">None,</span> <span class="pre">model:</span> <span class="pre">~aeolus.model.base.Model</span> <span class="pre">|</span> <span class="pre">None</span> <span class="pre">=</span> <span class="pre">Model</span> <span class="pre">[99</span> <span class="pre">fields],</span> <span class="pre">**kw_plt</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.html#matplotlib.axes.Axes" title="(in Matplotlib v3.8.0)"><span class="pre">Axes</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.11)"><span class="pre">None</span></a></span></span><a class="reference internal" href="../_modules/aeolus/plot/mpl.html#hcross"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#aeolus.plot.mpl.hcross" title="Link to this definition"></a></dt>
+<dd><p>Plot a horizontal cross-section aka lat-lon map of a 2D cube.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="aeolus.plot.mpl.linspace_pm1">
+<span class="sig-prename descclassname"><span class="pre">aeolus.plot.mpl.</span></span><span class="sig-name descname"><span class="pre">linspace_pm1</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.11)"><span class="pre">int</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">_SupportsArray</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.dtype.html#numpy.dtype" title="(in NumPy v1.26)"><span class="pre">dtype</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.11)"><span class="pre">Any</span></a><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">_NestedSequence</span><span class="p"><span class="pre">[</span></span><span class="pre">_SupportsArray</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.dtype.html#numpy.dtype" title="(in NumPy v1.26)"><span class="pre">dtype</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.11)"><span class="pre">Any</span></a><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.11)"><span class="pre">bool</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.11)"><span class="pre">int</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.11)"><span class="pre">float</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#complex" title="(in Python v3.11)"><span class="pre">complex</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><span class="pre">str</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#bytes" title="(in Python v3.11)"><span class="pre">bytes</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">_NestedSequence</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.11)"><span class="pre">bool</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.11)"><span class="pre">int</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.11)"><span class="pre">float</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#complex" title="(in Python v3.11)"><span class="pre">complex</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><span class="pre">str</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#bytes" title="(in Python v3.11)"><span class="pre">bytes</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="../_modules/aeolus/plot/mpl.html#linspace_pm1"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#aeolus.plot.mpl.linspace_pm1" title="Link to this definition"></a></dt>
+<dd><p>Return 2n evenly spaced numbers from -1 to 1, always skipping 0.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="aeolus.plot.mpl.make_list_2d">
+<span class="sig-prename descclassname"><span class="pre">aeolus.plot.mpl.</span></span><span class="sig-name descname"><span class="pre">make_list_2d</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">list_x</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Sequence" title="(in Python v3.11)"><span class="pre">Sequence</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><span class="pre">str</span></a><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">list_y</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Sequence" title="(in Python v3.11)"><span class="pre">Sequence</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><span class="pre">str</span></a><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">transpose</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.11)"><span class="pre">bool</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.11)"><span class="pre">None</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.11)"><span class="pre">list</span></a></span></span><a class="reference internal" href="../_modules/aeolus/plot/mpl.html#make_list_2d"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#aeolus.plot.mpl.make_list_2d" title="Link to this definition"></a></dt>
+<dd><p>Create a nested list out of 2 given lists.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="aeolus.plot.mpl.map_scatter">
+<span class="sig-prename descclassname"><span class="pre">aeolus.plot.mpl.</span></span><span class="sig-name descname"><span class="pre">map_scatter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">cube:</span> <span class="pre">~iris.cube.Cube,</span> <span class="pre">ax:</span> <span class="pre">~matplotlib.axes._axes.Axes</span> <span class="pre">|</span> <span class="pre">None</span> <span class="pre">=</span> <span class="pre">None,</span> <span class="pre">model:</span> <span class="pre">~aeolus.model.base.Model</span> <span class="pre">|</span> <span class="pre">None</span> <span class="pre">=</span> <span class="pre">Model</span> <span class="pre">[99</span> <span class="pre">fields],</span> <span class="pre">**kw_plt</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.html#matplotlib.axes.Axes" title="(in Matplotlib v3.8.0)"><span class="pre">Axes</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.11)"><span class="pre">None</span></a></span></span><a class="reference internal" href="../_modules/aeolus/plot/mpl.html#map_scatter"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#aeolus.plot.mpl.map_scatter" title="Link to this definition"></a></dt>
+<dd><p>Plot a lat-lon scatter plot of a 2D cube.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="aeolus.plot.mpl.timeseries_1d">
+<span class="sig-prename descclassname"><span class="pre">aeolus.plot.mpl.</span></span><span class="sig-name descname"><span class="pre">timeseries_1d</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">cube:</span> <span class="pre">~iris.cube.Cube,</span> <span class="pre">ax:</span> <span class="pre">~matplotlib.axes._axes.Axes</span> <span class="pre">|</span> <span class="pre">None</span> <span class="pre">=</span> <span class="pre">None,</span> <span class="pre">model:</span> <span class="pre">~aeolus.model.base.Model</span> <span class="pre">|</span> <span class="pre">None</span> <span class="pre">=</span> <span class="pre">Model</span> <span class="pre">[99</span> <span class="pre">fields],</span> <span class="pre">**kw_plt</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.html#matplotlib.axes.Axes" title="(in Matplotlib v3.8.0)"><span class="pre">Axes</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.11)"><span class="pre">None</span></a></span></span><a class="reference internal" href="../_modules/aeolus/plot/mpl.html#timeseries_1d"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#aeolus.plot.mpl.timeseries_1d" title="Link to this definition"></a></dt>
+<dd><p>Plot time series of a 1D cube.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="aeolus.plot.mpl.timeseries_2d">
+<span class="sig-prename descclassname"><span class="pre">aeolus.plot.mpl.</span></span><span class="sig-name descname"><span class="pre">timeseries_2d</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">cube:</span> <span class="pre">~iris.cube.Cube,</span> <span class="pre">ax:</span> <span class="pre">~matplotlib.axes._axes.Axes</span> <span class="pre">|</span> <span class="pre">None</span> <span class="pre">=</span> <span class="pre">None,</span> <span class="pre">model:</span> <span class="pre">~aeolus.model.base.Model</span> <span class="pre">|</span> <span class="pre">None</span> <span class="pre">=</span> <span class="pre">Model</span> <span class="pre">[99</span> <span class="pre">fields],</span> <span class="pre">**kw_plt</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.html#matplotlib.axes.Axes" title="(in Matplotlib v3.8.0)"><span class="pre">Axes</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.11)"><span class="pre">None</span></a></span></span><a class="reference internal" href="../_modules/aeolus/plot/mpl.html#timeseries_2d"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#aeolus.plot.mpl.timeseries_2d" title="Link to this definition"></a></dt>
+<dd><p>Plot time series of a 2D cube.</p>
+</dd></dl>
+
+</section>
+<section id="module-aeolus.plot.text">
+<span id="text-related-functions"></span><h2>Text-related functions<a class="headerlink" href="#module-aeolus.plot.text" title="Link to this heading"></a></h2>
+<p>Text-related formatting functions.</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="aeolus.plot.text.cube_minmeanmax_str">
+<span class="sig-prename descclassname"><span class="pre">aeolus.plot.text.</span></span><span class="sig-name descname"><span class="pre">cube_minmeanmax_str</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cube</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sep</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'</span> <span class="pre">|</span> <span class="pre">'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">eq_sign</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'='</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fmt</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'auto'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">weight</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">labels</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">['min',</span> <span class="pre">'mean',</span> <span class="pre">'max']</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kw_unit_format</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aeolus/plot/text.html#cube_minmeanmax_str"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#aeolus.plot.text.cube_minmeanmax_str" title="Link to this definition"></a></dt>
+<dd><p>Return min, mean and max of an iris cube as a string.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="aeolus.plot.text.fmt_lonlat">
+<span class="sig-prename descclassname"><span class="pre">aeolus.plot.text.</span></span><span class="sig-name descname"><span class="pre">fmt_lonlat</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lon_or_lat</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">degree</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aeolus/plot/text.html#fmt_lonlat"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#aeolus.plot.text.fmt_lonlat" title="Link to this definition"></a></dt>
+<dd><p>Convert longitude or latitude value to string with a hemisphere identifier.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>value</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.11)"><em>int</em></a>) – Value of longitude or latitude. Note that this function is only for integer values.</p></li>
+<li><p><strong>lon_or_lat</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><em>str</em></a>) – Longitude or latitude</p></li>
+<li><p><strong>degree</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.11)"><em>bool</em></a><em>, </em><em>optional</em>) – If true, a TeX degree symbol is included</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)">str</a></p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">fmt_lonlat</span><span class="p">(</span><span class="o">-</span><span class="mi">25</span><span class="p">,</span> <span class="s2">&quot;lon&quot;</span><span class="p">)</span>
+<span class="go">&#39;25W&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">fmt_lonlat</span><span class="p">(</span><span class="mi">89</span><span class="p">,</span> <span class="s2">&quot;lat&quot;</span><span class="p">,</span> <span class="n">degree</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="go">&#39;89$^\\degree$N&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">fmt_lonlat</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;lon&quot;</span><span class="p">)</span>
+<span class="go">&#39;0&#39;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="aeolus.plot.text.subplot_label_generator">
+<span class="sig-prename descclassname"><span class="pre">aeolus.plot.text.</span></span><span class="sig-name descname"><span class="pre">subplot_label_generator</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aeolus/plot/text.html#subplot_label_generator"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#aeolus.plot.text.subplot_label_generator" title="Link to this definition"></a></dt>
+<dd><p>Return generator of alphabetic labelling of subplots.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="aeolus.plot.text.tex2cf_units">
+<span class="sig-prename descclassname"><span class="pre">aeolus.plot.text.</span></span><span class="sig-name descname"><span class="pre">tex2cf_units</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">unit_str</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aeolus/plot/text.html#tex2cf_units"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#aeolus.plot.text.tex2cf_units" title="Link to this definition"></a></dt>
+<dd><p>Convert a TeX string to a string that can be used in cf_units.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="aeolus.plot.text.unit_format">
+<span class="sig-prename descclassname"><span class="pre">aeolus.plot.text.</span></span><span class="sig-name descname"><span class="pre">unit_format</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'1'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">decimal_digits</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">precision</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">exponent</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aeolus/plot/text.html#unit_format"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#aeolus.plot.text.unit_format" title="Link to this definition"></a></dt>
+<dd><p>Return a string representation of a given number with units.</p>
+<p>Format the scientific notation of the given number for use with LaTeX or Mathtext,
+with specified number of significant decimal digits and precision (number of decimal digits
+to show). The exponent to be used can also be specified explicitly.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>value</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.11)"><em>int</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.11)"><em>float</em></a>) – Number to be formatted.</p></li>
+<li><p><strong>unit</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><em>str</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.11)"><em>int</em></a><em>, </em><em>optional</em>) – Units of the number, if any.</p></li>
+<li><p><strong>decimal_digits</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.11)"><em>int</em></a><em>, </em><em>optional</em>) – Significant decimal digits.</p></li>
+<li><p><strong>precision</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.11)"><em>int</em></a><em>, </em><em>optional</em>) – Number of decimal digits to show.</p></li>
+<li><p><strong>exponent</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.11)"><em>int</em></a><em>, </em><em>optional</em>) – Exponent of the resulting number.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)">str</a></p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">unit_format</span><span class="p">(</span><span class="o">-</span><span class="mf">1.234e-5</span><span class="p">)</span>
+<span class="go">&#39;$-1.2\\times10^{-5}$&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">unit_format</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span>
+<span class="go">&#39;$6.0$&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">unit_format</span><span class="p">(</span><span class="mf">1.234e5</span><span class="p">,</span> <span class="n">unit</span><span class="o">=</span><span class="s2">&quot;m s^{-1}&quot;</span><span class="p">)</span>
+<span class="go">&#39;$1.2\\times10^{5}$ $m$ $s^{-1}$&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">unit_format</span><span class="p">(</span><span class="mf">1.234</span><span class="p">,</span> <span class="n">decimal_digits</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">precision</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+<span class="go">&#39;$1.200$&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">unit_format</span><span class="p">(</span><span class="mf">1.234</span><span class="p">,</span> <span class="n">decimal_digits</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">precision</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="go">&#39;$1.2$&#39;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</section>
+<section id="module-aeolus.plot.pv">
+<span id="pyvista-interface"></span><span id="pyvista-ref"></span><h2>PyVista interface<a class="headerlink" href="#module-aeolus.plot.pv" title="Link to this heading"></a></h2>
+<p>Prepare data in spherical coordinates for pyvista plotting.</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="aeolus.plot.pv.grid_for_scalar_cube_sph">
+<span class="sig-prename descclassname"><span class="pre">aeolus.plot.pv.</span></span><span class="sig-name descname"><span class="pre">grid_for_scalar_cube_sph</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">cube,</span> <span class="pre">z_scale=1,</span> <span class="pre">z_offset=0,</span> <span class="pre">grid=None,</span> <span class="pre">label='scalar3d',</span> <span class="pre">model=Model</span> <span class="pre">[99</span> <span class="pre">fields]</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aeolus/plot/pv.html#grid_for_scalar_cube_sph"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#aeolus.plot.pv.grid_for_scalar_cube_sph" title="Link to this definition"></a></dt>
 <dd><p>Create a <cite>pyvista</cite> grid for an <cite>iris</cite> cube (2D or 3D) in spherical coordinates.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>cube</strong> (<em>iris.cube.Cube</em>) – 2D or 3D cube with (longitude, latitude, [level_height]) coordinates.</p></li>
-<li><p><strong>z_scale</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)"><em>float</em></a><em>, </em><em>optional</em>) – Scaling factor for the vertical level dimension.</p></li>
-<li><p><strong>z_offset</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)"><em>float</em></a><em>, </em><em>optional</em>) – Scaling offset for the vertical level dimension.</p></li>
-<li><p><strong>grid</strong> (<a class="reference external" href="https://docs.pyvista.org/core/point-grids.html#pyvista.StructuredGrid" title="(in PyVista v0.29.1)"><em>pyvista.StructuredGrid</em></a><em>, </em><em>optional</em>) – If given, add data to the existing grid, otherwise create a new one from
+<li><p><strong>cube</strong> (<a class="reference external" href="https://scitools-iris.readthedocs.io/en/latest/generated/api/iris.cube.html#iris.cube.Cube" title="(in Iris v3.8.0.dev21)"><em>iris.cube.Cube</em></a>) – 2D or 3D cube with (longitude, latitude, [level_height]) coordinates.</p></li>
+<li><p><strong>z_scale</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.11)"><em>float</em></a><em>, </em><em>optional</em>) – Scaling factor for the vertical level dimension.</p></li>
+<li><p><strong>z_offset</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.11)"><em>float</em></a><em>, </em><em>optional</em>) – Scaling offset for the vertical level dimension.</p></li>
+<li><p><strong>grid</strong> (<a class="reference external" href="https://docs.pyvista.org/api/core/_autosummary/pyvista.StructuredGrid.html#pyvista.StructuredGrid" title="(in PyVista v0.38.5)"><em>pyvista.StructuredGrid</em></a><em>, </em><em>optional</em>) – If given, add data to the existing grid, otherwise create a new one from
 the input cube’s coordinates.</p></li>
-<li><p><strong>label</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)"><em>str</em></a><em>, </em><em>optional</em>) – Label for the data within the grid.</p></li>
+<li><p><strong>label</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><em>str</em></a><em>, </em><em>optional</em>) – Label for the data within the grid.</p></li>
 <li><p><strong>model</strong> (<em>aeolus.model.Model</em><em>, </em><em>optional</em>) – Model class with relevant variable names.</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p>PyVista grid with data in cell_arrays.</p>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>PyVista grid with data in the cell_data attribute.</p>
 </dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><a class="reference external" href="https://docs.pyvista.org/core/point-grids.html#pyvista.StructuredGrid" title="(in PyVista v0.29.1)">pyvista.StructuredGrid</a></p>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.pyvista.org/api/core/_autosummary/pyvista.StructuredGrid.html#pyvista.StructuredGrid" title="(in PyVista v0.38.5)">pyvista.StructuredGrid</a></p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py function">
-<dt id="aeolus.plot.pv.grid_for_vector_cubes_sph">
-<code class="sig-prename descclassname"><span class="pre">aeolus.plot.pv.</span></code><code class="sig-name descname"><span class="pre">grid_for_vector_cubes_sph</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="pre">u</span></em>, <em class="sig-param"><span class="pre">v</span></em>, <em class="sig-param"><span class="pre">w</span></em>, <em class="sig-param"><span class="pre">vector_scale=1</span></em>, <em class="sig-param"><span class="pre">vertical_wind_scale=1</span></em>, <em class="sig-param"><span class="pre">z_scale=1</span></em>, <em class="sig-param"><span class="pre">z_offset=0</span></em>, <em class="sig-param"><span class="pre">xstride=1</span></em>, <em class="sig-param"><span class="pre">ystride=1</span></em>, <em class="sig-param"><span class="pre">grid=None</span></em>, <em class="sig-param"><span class="pre">label='vector3d'</span></em>, <em class="sig-param"><span class="pre">model=&lt;class</span> <span class="pre">'aeolus.model.base.Model'&gt;(80</span> <span class="pre">fields)</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aeolus/plot/pv.html#grid_for_vector_cubes_sph"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#aeolus.plot.pv.grid_for_vector_cubes_sph" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="aeolus.plot.pv.grid_for_vector_cubes_sph">
+<span class="sig-prename descclassname"><span class="pre">aeolus.plot.pv.</span></span><span class="sig-name descname"><span class="pre">grid_for_vector_cubes_sph</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">u,</span> <span class="pre">v,</span> <span class="pre">w,</span> <span class="pre">vector_scale=1,</span> <span class="pre">vertical_wind_scale=1,</span> <span class="pre">z_scale=1,</span> <span class="pre">z_offset=0,</span> <span class="pre">xstride=1,</span> <span class="pre">ystride=1,</span> <span class="pre">grid=None,</span> <span class="pre">label='vector3d',</span> <span class="pre">model=Model</span> <span class="pre">[99</span> <span class="pre">fields]</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aeolus/plot/pv.html#grid_for_vector_cubes_sph"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#aeolus.plot.pv.grid_for_vector_cubes_sph" title="Link to this definition"></a></dt>
 <dd><p>Take wind vectors in spherical coordinates and create a <cite>pyvista</cite> grid for them.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>u</strong> (<em>iris.cube.Cube</em>) – 2D or 3D cube of x-wind component (zonal wind).</p></li>
-<li><p><strong>v</strong> (<em>iris.cube.Cube</em>) – 2D or 3D cube of y-wind component (meridional wind).</p></li>
-<li><p><strong>w</strong> (<em>iris.cube.Cube</em>) – 2D or 3D cube of z-wind component (vertical wind).</p></li>
-<li><p><strong>vector_scale</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)"><em>float</em></a><em>, </em><em>optional</em>) – Scaling factor for vectors.</p></li>
-<li><p><strong>vertical_wind_scale</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)"><em>float</em></a><em>, </em><em>optional</em>) – Scaling factor for the vertical wind component (for better visibility).</p></li>
-<li><p><strong>z_scale</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)"><em>float</em></a><em>, </em><em>optional</em>) – Scaling factor for the vertical level dimension.</p></li>
-<li><p><strong>z_offset</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)"><em>float</em></a><em>, </em><em>optional</em>) – Scaling offset for the vertical level dimension.</p></li>
-<li><p><strong>xstride</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)"><em>float</em></a><em>, </em><em>optional</em>) – Stride along the longitude axis.</p></li>
-<li><p><strong>ystride</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)"><em>float</em></a><em>, </em><em>optional</em>) – Stride along the latitude axis.</p></li>
-<li><p><strong>grid</strong> (<a class="reference external" href="https://docs.pyvista.org/core/point-grids.html#pyvista.StructuredGrid" title="(in PyVista v0.29.1)"><em>pyvista.StructuredGrid</em></a><em>, </em><em>optional</em>) – If given, add data to the existing grid, otherwise create a new one from
+<li><p><strong>u</strong> (<a class="reference external" href="https://scitools-iris.readthedocs.io/en/latest/generated/api/iris.cube.html#iris.cube.Cube" title="(in Iris v3.8.0.dev21)"><em>iris.cube.Cube</em></a>) – 2D or 3D cube of x-wind component (zonal wind).</p></li>
+<li><p><strong>v</strong> (<a class="reference external" href="https://scitools-iris.readthedocs.io/en/latest/generated/api/iris.cube.html#iris.cube.Cube" title="(in Iris v3.8.0.dev21)"><em>iris.cube.Cube</em></a>) – 2D or 3D cube of y-wind component (meridional wind).</p></li>
+<li><p><strong>w</strong> (<a class="reference external" href="https://scitools-iris.readthedocs.io/en/latest/generated/api/iris.cube.html#iris.cube.Cube" title="(in Iris v3.8.0.dev21)"><em>iris.cube.Cube</em></a>) – 2D or 3D cube of z-wind component (vertical wind).</p></li>
+<li><p><strong>vector_scale</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.11)"><em>float</em></a><em>, </em><em>optional</em>) – Scaling factor for vectors.</p></li>
+<li><p><strong>vertical_wind_scale</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.11)"><em>float</em></a><em>, </em><em>optional</em>) – Scaling factor for the vertical wind component (for better visibility).</p></li>
+<li><p><strong>z_scale</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.11)"><em>float</em></a><em>, </em><em>optional</em>) – Scaling factor for the vertical level dimension.</p></li>
+<li><p><strong>z_offset</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.11)"><em>float</em></a><em>, </em><em>optional</em>) – Scaling offset for the vertical level dimension.</p></li>
+<li><p><strong>xstride</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.11)"><em>float</em></a><em>, </em><em>optional</em>) – Stride along the longitude axis.</p></li>
+<li><p><strong>ystride</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.11)"><em>float</em></a><em>, </em><em>optional</em>) – Stride along the latitude axis.</p></li>
+<li><p><strong>grid</strong> (<a class="reference external" href="https://docs.pyvista.org/api/core/_autosummary/pyvista.StructuredGrid.html#pyvista.StructuredGrid" title="(in PyVista v0.38.5)"><em>pyvista.StructuredGrid</em></a><em>, </em><em>optional</em>) – If given, add data to the existing grid, otherwise create a new one from
 the input cube’s coordinates.</p></li>
-<li><p><strong>label</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)"><em>str</em></a><em>, </em><em>optional</em>) – Label for the data within the grid.</p></li>
+<li><p><strong>label</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><em>str</em></a><em>, </em><em>optional</em>) – Label for the data within the grid.</p></li>
 <li><p><strong>model</strong> (<em>aeolus.model.Model</em><em>, </em><em>optional</em>) – Model class with relevant variable names.</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p>PyVista grid with vector data in point_arrays.</p>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>PyVista grid with vector data in the point_data attribute.</p>
 </dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><a class="reference external" href="https://docs.pyvista.org/core/point-grids.html#pyvista.StructuredGrid" title="(in PyVista v0.29.1)">pyvista.StructuredGrid</a></p>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.pyvista.org/api/core/_autosummary/pyvista.StructuredGrid.html#pyvista.StructuredGrid" title="(in PyVista v0.38.5)">pyvista.StructuredGrid</a></p>
 </dd>
 </dl>
 </dd></dl>
 
-</div>
-</div>
+</section>
+</section>
 
 
            </div>
-           
           </div>
-          <footer>
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="region.html" class="btn btn-neutral float-right" title="Regions" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="model.html" class="btn btn-neutral float-left" title="Model-specific dictionaries of variable and coordinate names" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="proc_um_output.html" class="btn btn-neutral float-right" title="Process output of the UM" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
 
   <div role="contentinfo">
-    <p>
-        &#169; Copyright 2021, the aeolus developers.
-
-    </p>
+    <p>&#169; Copyright 2020 - 2023, aeolus contributors.</p>
   </div>
-    
-    
-    
-    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
-    
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
     <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
-    
-    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
 
 </footer>
         </div>
       </div>
-
     </section>
-
   </div>
-  
-
-  <script type="text/javascript">
+  <script>
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script>
-
-  
-  
-    
-   
+  </script> 
 
 </body>
 </html>

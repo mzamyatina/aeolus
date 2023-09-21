@@ -1,4 +1,4 @@
 Regions
 =======
-
-.. autoclass:: aeolus.region.Region
+.. automodule:: aeolus.region
+   :members:

@@ -1,226 +1,248 @@
-
-
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" />
-  
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  
-  <title>Changelog &mdash; aeolus 0+untagged.1.gd31fa59 documentation</title>
-  
-
-  
-  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-
-  
-  
+  <title>Changelog &mdash; aeolus 0.4.9+232.gfccc23a documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
     <link rel="shortcut icon" href="_static/favicon.ico"/>
-  
-
-  
-  
-
-  
-
-  
   <!--[if lt IE 9]>
     <script src="_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-        <script src="_static/jquery.js"></script>
-        <script src="_static/underscore.js"></script>
-        <script src="_static/doctools.js"></script>
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=740970f4"></script>
+        <script src="_static/doctools.js?v=888ff710"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    
-    <script type="text/javascript" src="_static/js/theme.js"></script>
-
-    
+    <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Contributor’s Guide" href="contributing.html" />
-    <link rel="prev" title="Subset cubes using constraints" href="api/subset.html" /> 
+    <link rel="prev" title="Synthetic observations" href="api/synthobs.html" /> 
 </head>
 
-<body class="wy-body-for-nav">
-
-   
+<body class="wy-body-for-nav"> 
   <div class="wy-grid-for-nav">
-    
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-          
 
           
-            <a href="index.html" class="icon icon-home"> aeolus
           
-
-          
+          <a href="index.html" class="icon icon-home">
+            aeolus
           </a>
-
-          
-            
-            
               <div class="version">
-                0+untagged.1.gd31fa59
+                0.4.9+232.gfccc23a
               </div>
-            
-          
-
-          
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
-
-          
-        </div>
-
-        
-        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-          
-            
-            
-              
-            
-            
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="install.html">Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="examples/index.html">Examples</a></li>
 <li class="toctree-l1"><a class="reference internal" href="api/index.html">API reference</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Changelog</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#id1">0.4.10</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id2">0.4.9</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id3">0.4.8</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id4">0.4.7</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id5">0.4.6</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id6">0.4.5</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id7">0.4.4</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id8">0.4.3</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id9">0.4.2</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id10">0.4.1</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id11">0.4.0</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id12">0.3.2</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id13">0.2</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id14">0.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id1">0.4.18</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id2">0.4.17</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id3">0.4.16</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id4">0.4.15</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id5">0.4.14</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id6">0.4.13</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id7">0.4.12</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id8">0.4.11</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id9">0.4.10</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id10">0.4.9</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id11">0.4.8</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id12">0.4.7</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id13">0.4.6</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id14">0.4.5</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id15">0.4.4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id16">0.4.3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id17">0.4.2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id18">0.4.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id19">0.4.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id20">0.3.2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id21">0.2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id22">0.1</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="contributing.html">Contributor’s Guide</a></li>
 </ul>
 
-            
-          
         </div>
-        
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-
-      
-      <nav class="wy-nav-top" aria-label="top navigation">
-        
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="index.html">aeolus</a>
-        
       </nav>
 
-
       <div class="wy-nav-content">
-        
         <div class="rst-content">
-        
-          
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div role="navigation" aria-label="breadcrumbs navigation">
-
+          <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-    
-      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
-        
-      <li>Changelog</li>
-    
-    
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Changelog</li>
       <li class="wy-breadcrumbs-aside">
-        
-          
             <a href="_sources/changelog.rst.txt" rel="nofollow"> View page source</a>
-          
-        
       </li>
-    
   </ul>
-
-  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
-            
-  
-<style>
-/* CSS overrides for sphinx_rtd_theme */
-
-/* 24px margin */
-.nbinput.nblast.container,
-.nboutput.nblast.container {
-    margin-bottom: 19px;  /* padding has already 5px */
-}
-
-/* ... except between code cells! */
-.nblast.container + .nbinput.container {
-    margin-top: -19px;
-}
-
-.admonition > p:before {
-    margin-right: 4px;  /* make room for the exclamation icon */
-}
-
-/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
-.math {
-    text-align: unset;
-}
-</style>
-<div class="section" id="changelog">
-<h1>Changelog<a class="headerlink" href="#changelog" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="id1">
-<h2>0.4.10<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+             
+  <section id="changelog">
+<h1>Changelog<a class="headerlink" href="#changelog" title="Link to this heading"></a></h1>
+<section id="id1">
+<h2>0.4.18<a class="headerlink" href="#id1" title="Link to this heading"></a></h2>
 <dl class="field-list simple">
-<dt class="field-odd">Date</dt>
+<dt class="field-odd">Date<span class="colon">:</span></dt>
 <dd class="field-odd"><p>TBA</p>
 </dd>
 </dl>
 <ul class="simple">
-<li><p>Add more names to <code class="xref py py-obj docutils literal notranslate"><span class="pre">model.base</span></code></p></li>
+<li><p>Add <code class="xref py py-obj docutils literal notranslate"><span class="pre">lfric</span></code> functions in a submodule with the same name.</p></li>
+<li><p>Add <code class="xref py py-obj docutils literal notranslate"><span class="pre">esmf_regrid</span></code> as a dependency.</p></li>
+<li><p>Move <code class="xref py py-obj docutils literal notranslate"><span class="pre">calc_derived_cubes</span></code> from <code class="xref py py-obj docutils literal notranslate"><span class="pre">pouch</span></code>, add <code class="xref py py-obj docutils literal notranslate"><span class="pre">air_pressure()</span></code>.</p></li>
+<li><p>Add various plotting utilities.</p></li>
+<li><p>Add the <code class="xref py py-obj docutils literal notranslate"><span class="pre">log</span></code> submodule with <code class="xref py py-obj docutils literal notranslate"><span class="pre">loguru</span></code> as a dependency.</p></li>
+<li><p>Add <code class="xref py py-obj docutils literal notranslate"><span class="pre">proc_um_output</span></code>.</p></li>
+<li><p>Add the <code class="xref py py-obj docutils literal notranslate"><span class="pre">RUNTIME</span></code> variable.</p></li>
+<li><p>Update dependencies.</p></li>
 </ul>
-</div>
-<div class="section" id="id2">
-<h2>0.4.9<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="id2">
+<h2>0.4.17<a class="headerlink" href="#id2" title="Link to this heading"></a></h2>
 <dl class="field-list simple">
-<dt class="field-odd">Date</dt>
+<dt class="field-odd">Date<span class="colon">:</span></dt>
+<dd class="field-odd"><p>14 April 2023</p>
+</dd>
+</dl>
+<ul class="simple">
+<li><p>Add <code class="xref py py-obj docutils literal notranslate"><span class="pre">lfric</span></code> name dictionary.</p></li>
+<li><p>Add <code class="xref py py-obj docutils literal notranslate"><span class="pre">subset.CellMethodConstraint</span></code>.</p></li>
+<li><p>Update <code class="xref py py-obj docutils literal notranslate"><span class="pre">pyvista</span></code> functions to be in step with the latest <code class="xref py py-obj docutils literal notranslate"><span class="pre">pyvista</span></code> version.</p></li>
+<li><p>Fix a bug in the <code class="xref py py-obj docutils literal notranslate"><span class="pre">calc_transmission_spectrum()</span></code> (does not affect the results).</p></li>
+</ul>
+</section>
+<section id="id3">
+<h2>0.4.16<a class="headerlink" href="#id3" title="Link to this heading"></a></h2>
+<dl class="field-list simple">
+<dt class="field-odd">Date<span class="colon">:</span></dt>
+<dd class="field-odd"><p>11 January 2023</p>
+</dd>
+</dl>
+<ul class="simple">
+<li><p>Miscellaneous improvements.</p></li>
+</ul>
+</section>
+<section id="id4">
+<h2>0.4.15<a class="headerlink" href="#id4" title="Link to this heading"></a></h2>
+<dl class="field-list simple">
+<dt class="field-odd">Date<span class="colon">:</span></dt>
+<dd class="field-odd"><p>22 March 2022</p>
+</dd>
+</dl>
+<ul class="simple">
+<li><p>Patch the calculation of the day-night average transmission flux.</p></li>
+<li><p>Update citation.</p></li>
+</ul>
+</section>
+<section id="id5">
+<h2>0.4.14<a class="headerlink" href="#id5" title="Link to this heading"></a></h2>
+<dl class="field-list simple">
+<dt class="field-odd">Date<span class="colon">:</span></dt>
+<dd class="field-odd"><p>30 March 2022</p>
+</dd>
+</dl>
+<ul class="simple">
+<li><p>Require iris 3.2 as a minimum.</p></li>
+<li><p>Drop Python 3.7 support.</p></li>
+<li><p>Add github action tests for Python 3.10 (for now excluding windows).</p></li>
+<li><p>Add new model names.</p></li>
+<li><p>Correct the calculation of <code class="xref py py-obj docutils literal notranslate"><span class="pre">sigma_p</span></code> and remove its averaging.</p></li>
+<li><p>Make <code class="xref py py-obj docutils literal notranslate"><span class="pre">calc.stats.time_mean()</span></code> be able to accept cubes or collections of cubes.</p></li>
+<li><p>Add the <code class="xref py py-obj docutils literal notranslate"><span class="pre">structured_um_loading</span></code> option to <code class="xref py py-obj docutils literal notranslate"><span class="pre">io.load_data()</span></code>.</p></li>
+<li><p>Add <code class="xref py py-obj docutils literal notranslate"><span class="pre">wind_rot_div()</span></code> to the diagnostics module and a relevant example notebook.</p></li>
+<li><p>Simplify <code class="xref py py-obj docutils literal notranslate"><span class="pre">isel()</span></code> following suggestions from the <a class="reference external" href="https://scitools-iris.readthedocs.io/en/latest/generated/api/iris.html#module-iris" title="(in Iris v3.8.0.dev21)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">iris</span></code></a> devs.</p></li>
+</ul>
+</section>
+<section id="id6">
+<h2>0.4.13<a class="headerlink" href="#id6" title="Link to this heading"></a></h2>
+<dl class="field-list simple">
+<dt class="field-odd">Date<span class="colon">:</span></dt>
+<dd class="field-odd"><p>18 October 2021</p>
+</dd>
+</dl>
+<ul class="simple">
+<li><p>Make the package compatible with iris v3.1 by using explicit imports</p></li>
+<li><p>Refactor functions to calculate transmission spectrum.</p></li>
+<li><p>Add <code class="xref py py-obj docutils literal notranslate"><span class="pre">io.create_dummy_cube()</span></code></p></li>
+<li><p>Add <code class="xref py py-obj docutils literal notranslate"><span class="pre">synthobs.calc_transmission_spectrum()</span></code></p></li>
+<li><p>Use <code class="xref py py-obj docutils literal notranslate"><span class="pre">da.roll()</span></code> instead of <code class="xref py py-obj docutils literal notranslate"><span class="pre">np.roll</span></code> in <code class="xref py py-obj docutils literal notranslate"><span class="pre">coord.roll_*</span></code> functions.</p></li>
+<li><p>Fix  a few minor bugs in synthobs.</p></li>
+</ul>
+</section>
+<section id="id7">
+<h2>0.4.12<a class="headerlink" href="#id7" title="Link to this heading"></a></h2>
+<dl class="field-list simple">
+<dt class="field-odd">Date<span class="colon">:</span></dt>
+<dd class="field-odd"><p>29 July 2021</p>
+</dd>
+</dl>
+<ul class="simple">
+<li><p>Add <code class="xref py py-obj docutils literal notranslate"><span class="pre">coord_check</span></code> option to <code class="xref py py-obj docutils literal notranslate"><span class="pre">AtmoSim</span></code> and <code class="xref py py-obj docutils literal notranslate"><span class="pre">CoordContainer</span></code> to allow for non-checking of coordinates.</p></li>
+<li><p>Remove <code class="xref py py-obj docutils literal notranslate"><span class="pre">MidpointNormalize</span></code></p></li>
+<li><p>Add <code class="xref py py-obj docutils literal notranslate"><span class="pre">plot.text.tex2cf_units()</span></code> and <code class="xref py py-obj docutils literal notranslate"><span class="pre">plot.text.unit_format()</span></code></p></li>
+<li><p>Rewrite github actions</p></li>
+<li><p>Add pre-commit hooks</p></li>
+</ul>
+</section>
+<section id="id8">
+<h2>0.4.11<a class="headerlink" href="#id8" title="Link to this heading"></a></h2>
+<dl class="field-list simple">
+<dt class="field-odd">Date<span class="colon">:</span></dt>
+<dd class="field-odd"><p>08 June 2021</p>
+</dd>
+</dl>
+<ul class="simple">
+<li><p>Add representations of <code class="xref py py-obj docutils literal notranslate"><span class="pre">AtmoSim</span></code></p></li>
+<li><p>Fix a bug with the <code class="xref py py-obj docutils literal notranslate"><span class="pre">const_from_attrs</span></code> decorator</p></li>
+<li><p>Add contributor’s guide</p></li>
+<li><p>Replace all autodoc function and class references by module references</p></li>
+</ul>
+</section>
+<section id="id9">
+<h2>0.4.10<a class="headerlink" href="#id9" title="Link to this heading"></a></h2>
+<dl class="field-list simple">
+<dt class="field-odd">Date<span class="colon">:</span></dt>
+<dd class="field-odd"><p>07 June 2021</p>
+</dd>
+</dl>
+<ul class="simple">
+<li><p>Add functions to calculate synthetic transmission spectrum. By <a class="reference external" href="https://github.com/mzamyatina">Maria Zamyatina</a>.</p></li>
+<li><p>Replace <code class="xref py py-obj docutils literal notranslate"><span class="pre">interp_to_pres_lev()</span></code>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">interp_all_to_pres_lev()</span></code> and <code class="xref py py-obj docutils literal notranslate"><span class="pre">interp_to_single_pres_lev()</span></code> with <code class="xref py py-obj docutils literal notranslate"><span class="pre">interp_cube_from_height_to_pressure_levels()</span></code> and <code class="xref py py-obj docutils literal notranslate"><span class="pre">interp_cubelist_from_height_to_pressure_levels()</span></code> with a better interface</p></li>
+<li><p>Move test data to a separate repository: <code class="xref py py-obj docutils literal notranslate"><span class="pre">aeolus_data</span></code></p></li>
+<li><p>Add more names to <code class="xref py py-obj docutils literal notranslate"><span class="pre">model.base</span></code></p></li>
+<li><p>Add an option for the <code class="xref py py-obj docutils literal notranslate"><span class="pre">const_from_attrs()</span></code> decorator not to raise an error</p></li>
+</ul>
+</section>
+<section id="id10">
+<h2>0.4.9<a class="headerlink" href="#id10" title="Link to this heading"></a></h2>
+<dl class="field-list simple">
+<dt class="field-odd">Date<span class="colon">:</span></dt>
 <dd class="field-odd"><p>12 April 2021</p>
 </dd>
 </dl>
@@ -230,7 +252,7 @@
 <li><p>Add <code class="xref py py-obj docutils literal notranslate"><span class="pre">extract()</span></code> method to <code class="xref py py-obj docutils literal notranslate"><span class="pre">AtmoSimBase</span></code></p></li>
 <li><p>Add pressure coordinate to <code class="xref py py-obj docutils literal notranslate"><span class="pre">DimConstr</span></code></p></li>
 <li><p>Refactor <code class="xref py py-obj docutils literal notranslate"><span class="pre">Run</span></code> and prepare for its deprecation</p></li>
-<li><p>Add <code class="xref py py-obj docutils literal notranslate"><span class="pre">load_data()</span></code> to <a class="reference external" href="https://docs.python.org/3/library/io.html#module-io" title="(in Python v3.9)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">io</span></code></a></p></li>
+<li><p>Add <code class="xref py py-obj docutils literal notranslate"><span class="pre">load_data()</span></code> to <a class="reference external" href="https://docs.python.org/3/library/io.html#module-io" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">io</span></code></a></p></li>
 <li><p>Move <code class="xref py py-obj docutils literal notranslate"><span class="pre">add_planet_conf_to_cubes()</span></code> to the <code class="xref py py-obj docutils literal notranslate"><span class="pre">const</span></code> module</p></li>
 <li><p>Deprecate <code class="xref py py-obj docutils literal notranslate"><span class="pre">ScalarCube</span></code></p></li>
 <li><p>Add new variable names to <code class="xref py py-obj docutils literal notranslate"><span class="pre">um</span></code></p></li>
@@ -242,11 +264,11 @@
 <li><p>Improve docstrings</p></li>
 <li><p>Add an example notebook for working with model names</p></li>
 </ul>
-</div>
-<div class="section" id="id3">
-<h2>0.4.8<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="id11">
+<h2>0.4.8<a class="headerlink" href="#id11" title="Link to this heading"></a></h2>
 <dl class="field-list simple">
-<dt class="field-odd">Date</dt>
+<dt class="field-odd">Date<span class="colon">:</span></dt>
 <dd class="field-odd"><p>25 January 2021</p>
 </dd>
 </dl>
@@ -255,11 +277,11 @@
 <li><p>Add new meta decorators</p></li>
 <li><p>Fix typos</p></li>
 </ul>
-</div>
-<div class="section" id="id4">
-<h2>0.4.7<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="id12">
+<h2>0.4.7<a class="headerlink" href="#id12" title="Link to this heading"></a></h2>
 <dl class="field-list simple">
-<dt class="field-odd">Date</dt>
+<dt class="field-odd">Date<span class="colon">:</span></dt>
 <dd class="field-odd"><p>03 December 2020</p>
 </dd>
 </dl>
@@ -309,11 +331,11 @@
 </ul>
 </li>
 </ul>
-</div>
-<div class="section" id="id5">
-<h2>0.4.6<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="id13">
+<h2>0.4.6<a class="headerlink" href="#id13" title="Link to this heading"></a></h2>
 <dl class="field-list simple">
-<dt class="field-odd">Date</dt>
+<dt class="field-odd">Date<span class="colon">:</span></dt>
 <dd class="field-odd"><p>17 September 2020</p>
 </dd>
 </dl>
@@ -344,11 +366,11 @@
 </ul>
 </li>
 </ul>
-</div>
-<div class="section" id="id6">
-<h2>0.4.5<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="id14">
+<h2>0.4.5<a class="headerlink" href="#id14" title="Link to this heading"></a></h2>
 <dl class="field-list simple">
-<dt class="field-odd">Date</dt>
+<dt class="field-odd">Date<span class="colon">:</span></dt>
 <dd class="field-odd"><p>08 June 2020</p>
 </dd>
 </dl>
@@ -363,29 +385,28 @@
 </li>
 <li><p>Minor bug fixes and clean-up</p></li>
 </ul>
-</div>
-<div class="section" id="id7">
-<h2>0.4.4<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="id15">
+<h2>0.4.4<a class="headerlink" href="#id15" title="Link to this heading"></a></h2>
 <dl class="field-list simple">
-<dt class="field-odd">Date</dt>
+<dt class="field-odd">Date<span class="colon">:</span></dt>
 <dd class="field-odd"><p>04 May 2020</p>
 </dd>
 </dl>
 <ul class="simple">
 <li><p>Add Python 3.8 to build matrix</p></li>
-<li><p>API changes: merge <code class="xref py py-obj docutils literal notranslate"><span class="pre">grid</span></code> into <code class="xref py py-obj docutils literal notranslate"><span class="pre">coord</span></code>; move <code class="xref py py-obj docutils literal notranslate"><span class="pre">misc</span></code> flux calculations to <code class="xref py py-obj docutils literal notranslate"><span class="pre">calc</span></code> submodule,</p></li>
+<li><p>API changes: merge <code class="xref py py-obj docutils literal notranslate"><span class="pre">grid</span></code> into <code class="xref py py-obj docutils literal notranslate"><span class="pre">coord</span></code>; move <code class="xref py py-obj docutils literal notranslate"><span class="pre">misc</span></code> flux calculations to <code class="xref py py-obj docutils literal notranslate"><span class="pre">calc</span></code> submodule, remove <code class="xref py py-obj docutils literal notranslate"><span class="pre">util</span></code> folder by moving <code class="xref py py-obj docutils literal notranslate"><span class="pre">text</span></code> to <code class="xref py py-obj docutils literal notranslate"><span class="pre">plot</span></code>.</p></li>
+<li><p>Add a function to attach non-Earth auxiliary time coordinates to a cube</p></li>
+<li><p>Add Titan constants (some orbital parameters are those for Saturn for simplicity)</p></li>
+<li><p>Fix a typo in Earth constants</p></li>
+<li><p>Add a new function for matplotlib plots: <code class="xref py py-obj docutils literal notranslate"><span class="pre">plot.add_custom_legend()</span></code></p></li>
+<li><p>Minor fixes in the travis integration</p></li>
 </ul>
-<p>remove <code class="xref py py-obj docutils literal notranslate"><span class="pre">util</span></code> folder by moving <code class="xref py py-obj docutils literal notranslate"><span class="pre">text</span></code> to <code class="xref py py-obj docutils literal notranslate"><span class="pre">plot</span></code>.
-* Add a function to attach non-Earth auxiliary time coordinates to a cube
-* Add Titan constants (some orbital parameters are those for Saturn for simplicity)
-* Fix a typo in Earth constants
-* Add a new function for matplotlib plots: <code class="xref py py-obj docutils literal notranslate"><span class="pre">plot.add_custom_legend()</span></code>
-* Minor fixes in the travis integration</p>
-</div>
-<div class="section" id="id8">
-<h2>0.4.3<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="id16">
+<h2>0.4.3<a class="headerlink" href="#id16" title="Link to this heading"></a></h2>
 <dl class="field-list simple">
-<dt class="field-odd">Date</dt>
+<dt class="field-odd">Date<span class="colon">:</span></dt>
 <dd class="field-odd"><p>30 March 2020</p>
 </dd>
 </dl>
@@ -396,11 +417,11 @@
 <li><p>Add a method to <code class="xref py py-obj docutils literal notranslate"><span class="pre">Run</span></code> to save processed cubelist to netCDF</p></li>
 <li><p>Fix a few bugs</p></li>
 </ul>
-</div>
-<div class="section" id="id9">
-<h2>0.4.2<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="id17">
+<h2>0.4.2<a class="headerlink" href="#id17" title="Link to this heading"></a></h2>
 <dl class="field-list simple">
-<dt class="field-odd">Date</dt>
+<dt class="field-odd">Date<span class="colon">:</span></dt>
 <dd class="field-odd"><p>05 January 2020</p>
 </dd>
 </dl>
@@ -413,11 +434,11 @@
 <li><p>Move documentation to github pages</p></li>
 <li><p>Fix a few bugs</p></li>
 </ul>
-</div>
-<div class="section" id="id10">
-<h2>0.4.1<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="id18">
+<h2>0.4.1<a class="headerlink" href="#id18" title="Link to this heading"></a></h2>
 <dl class="field-list simple">
-<dt class="field-odd">Date</dt>
+<dt class="field-odd">Date<span class="colon">:</span></dt>
 <dd class="field-odd"><p>03 December 2019</p>
 </dd>
 </dl>
@@ -425,11 +446,11 @@
 <li><p>Add a few standard constants</p></li>
 <li><p>Improve units in metpy interface</p></li>
 </ul>
-</div>
-<div class="section" id="id11">
-<h2>0.4.0<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="id19">
+<h2>0.4.0<a class="headerlink" href="#id19" title="Link to this heading"></a></h2>
 <dl class="field-list simple">
-<dt class="field-odd">Date</dt>
+<dt class="field-odd">Date<span class="colon">:</span></dt>
 <dd class="field-odd"><p>28 November 2019</p>
 </dd>
 </dl>
@@ -437,11 +458,11 @@
 <li><p>Add metpy-to-iris interface</p></li>
 <li><p>Fix a few bugs</p></li>
 </ul>
-</div>
-<div class="section" id="id12">
-<h2>0.3.2<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="id20">
+<h2>0.3.2<a class="headerlink" href="#id20" title="Link to this heading"></a></h2>
 <dl class="field-list simple">
-<dt class="field-odd">Date</dt>
+<dt class="field-odd">Date<span class="colon">:</span></dt>
 <dd class="field-odd"><p>21 November 2019</p>
 </dd>
 </dl>
@@ -450,77 +471,60 @@
 <li><p>Improve plotting functions and diags</p></li>
 <li><p>Add test data</p></li>
 </ul>
-</div>
-<div class="section" id="id13">
-<h2>0.2<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="id21">
+<h2>0.2<a class="headerlink" href="#id21" title="Link to this heading"></a></h2>
 <dl class="field-list simple">
-<dt class="field-odd">Date</dt>
+<dt class="field-odd">Date<span class="colon">:</span></dt>
 <dd class="field-odd"><p>02 November 2019</p>
 </dd>
 </dl>
 <ul class="simple">
 <li><p>Technical updates</p></li>
 </ul>
-</div>
-<div class="section" id="id14">
-<h2>0.1<a class="headerlink" href="#id14" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="id22">
+<h2>0.1<a class="headerlink" href="#id22" title="Link to this heading"></a></h2>
 <dl class="field-list simple">
-<dt class="field-odd">Date</dt>
+<dt class="field-odd">Date<span class="colon">:</span></dt>
 <dd class="field-odd"><p>31 October 2019</p>
 </dd>
 </dl>
 <ul class="simple">
 <li><p>First packaged release</p></li>
 </ul>
-</div>
-</div>
+</section>
+</section>
 
 
            </div>
-           
           </div>
-          <footer>
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="api/synthobs.html" class="btn btn-neutral float-left" title="Synthetic observations" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
         <a href="contributing.html" class="btn btn-neutral float-right" title="Contributor’s Guide" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
-        <a href="api/subset.html" class="btn btn-neutral float-left" title="Subset cubes using constraints" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
 
   <hr/>
 
   <div role="contentinfo">
-    <p>
-        &#169; Copyright 2021, the aeolus developers.
-
-    </p>
+    <p>&#169; Copyright 2020 - 2023, aeolus contributors.</p>
   </div>
-    
-    
-    
-    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
-    
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
     <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
-    
-    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
 
 </footer>
         </div>
       </div>
-
     </section>
-
   </div>
-  
-
-  <script type="text/javascript">
+  <script>
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script>
-
-  
-  
-    
-   
+  </script> 
 
 </body>
 </html>
